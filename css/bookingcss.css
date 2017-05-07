@@ -83,4 +83,8 @@ td:hover {
     margin-left: 5px;
     padding: 3px; }
 
+.options {
+  not(table,th,td)-background-color: none;
+  not(table,th,td)-color: none; }
+
 /*# sourceMappingURL=bookingcss.css.map */

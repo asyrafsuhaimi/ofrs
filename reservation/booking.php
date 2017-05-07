@@ -38,16 +38,25 @@
       <div class="center">
         <h2>Dewan Besar UTeM</h2>
         <div class="imgdewan">
-          <img src="../img/dewan.jpg" alt="dewan UTeM" width="500" height="200">
+          <img src="../img/dewan.jpg" alt="dewan UTeM" width="450" height="200">
         </div>
         <div class="date">
+          <table class="options">
           <form>
-            Date:<input type = "date" value="date" name="date" id="myDate" onchange="myFunction()">
-            Facilities:<select>
-              <option>Dewan Besar<option>
+            <tr>
+              <td>Date:</td>
+                <td><input type = "date" value="date" name="date" id="myDate" onchange="myFunction()"></td>
+            </tr>
+            <tr>
+              <td>Facilities:</td>
+                <td>
+                  <select>
+                  <option>Dewan Besar<option>
+                </td>
+              </tr>
             </select>
           </form>
-
+          </table>
         </div>
         <table id="myTable">
           <tr>
@@ -88,12 +97,12 @@
 
     var date = new Date(document.getElementById("myDate").value);
     if ((table.rows.length)>1){
-      for (i=0;i<7;i++) {
-        table.deleteRow(-1);
+      for (i=0;i<1;i++) {
+        table.deleteRow(- 1);
       }
 
     }
-    for(i=1;i<8;i++)
+    for(i=1;i<2;i++)
     {
     var row = table.insertRow(i);
     var b = row.insertCell(0);
@@ -101,10 +110,8 @@
     date.setDate(date.getDate() + 1);
       for(a=1;a<8;a++)
       {
-        //var row1= table.insertRow(2);
         var r = row.insertCell(a);
         r.innerHTML="<a href='bookingdetail.php'><img width='30' height='30' class='centerimg' src='../img/plus.png'></a>";
-        //var c = row.insertCell()
       }
     }
 
