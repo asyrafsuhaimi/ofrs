@@ -1,0 +1,107 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin:0 auto;
+}
+
+body {
+	background-image:url(../image/network.jpg);
+	
+}
+
+#frame {
+	border:solid medium #000;
+	margin:auto;
+	background-color:#FFF;
+}
+
+#banner {
+	width:900px;
+	height:200px;
+	background-image:url(../bannersmps.gif)
+}
+
+#menu {
+	background-color: #2B8BD5;
+}
+
+#content {
+	padding: 30px;
+	text-shadow: 0px 0px #FFF;
+	text-align: center;
+}
+
+#footer {
+	text-align:center;
+	border-top: dotted thin #000;
+}
+
+#login-box {
+	margin:0 auto;
+	border: solid medium #333;
+	padding-top:10px;
+	
+}
+.sub-tajuk-ungu {
+	background-color: #FFCC33;
+	border:1px solid #CCC;
+	color:#000000;
+	font-size:20px;
+	border-radius:5px;
+	margin:20 20 20px;
+	padding:8px 8px 8px 8px;
+	vertical-align:middle;
+	width:98%;
+}
+
+.sub-tajuk-oren {
+	background-color: #2B8BD5;
+	border:1px solid #ccc;
+	border-radius:5px;
+	margin:20 20 20px;
+	padding:8px 8px 8px 8px;
+	vertical-align:middle;
+	width:98%;
+}
+
+.butangbiru {
+	color:#06C;
+	text-decoration:none;
+	text-shadow:none;
+	background-position:0 -90px;
+}
+
+.sub-tajuk-borang {
+	background-color:#ECECEC;
+	border:1px solid #CCC;
+	color:#FFFFFF;
+	font-size:18px;
+	margin-bottom:5px;
+	margin-top:5px;
+	padding:4px 8px;
+}
+
+.bulat {
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+#frame tr #content table tr td table tr td #example thead tr td strong {
+	font-size: 14px;
+}
+#frame tr #content table tr td table tr td #example tr td {
+	font-size: 12px;
+}
+#frame tr td table tr td #example thead tr td center {
+	font-size: 12px;
+}
+#frame tr td table tr td #example tr td a {
+	font-size: 12px;
+}
+#frame tr td table tr td #example tr td {
+	font-size: 12px;
+}
+#frame tr td table tr td #example tr td {
+	font-size: 12px;
+}

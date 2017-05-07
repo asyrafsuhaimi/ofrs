@@ -1,0 +1,90 @@
+table, th, td {
+  border: 1px solid #D3D3D3;
+  border-collapse: collapse;
+  padding: 10px;
+  display: right;
+  margin: auto; }
+
+th {
+  background-color: #808080;
+  color: black; }
+
+th:hover {
+  background-color: #D3D3D3; }
+
+td {
+  background-color: #F0F8FF;
+  color: black; }
+
+td:hover {
+  background-color: #D3D3D3; }
+
+.imgdewan img {
+  padding: 10px;
+  float: left;
+  clear: both; }
+
+.centerimg {
+  display: block;
+  margin: auto; }
+
+.center {
+  height: 500px;
+  padding: 15px; }
+  .center h2 {
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 30px;
+    padding-left: 30px; }
+
+.btn {
+  background-color: #AFEEEE;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 10px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer; }
+
+.btn1 {
+  background-color: #AFEEEE;
+  color: black;
+  border: 2px solid #AFEEEE; }
+
+.btn2 {
+  background-color: #AFEEEE;
+  color: black;
+  border: 2px solid #AFEEEE; }
+
+.btn1:hover {
+  background-color: green;
+  color: white;
+  border: 2px solid green; }
+
+.btn2:hover {
+  background-color: red;
+  color: white;
+  border: 2px solid red; }
+
+.btncenter {
+  margin-left: 41%; }
+
+.date {
+  padding-bottom: 5px; }
+  .date input {
+    margin-right: 20px;
+    margin-left: 5px; }
+  .date select {
+    margin-left: 5px;
+    padding: 3px; }
+
+img {
+  width: 30px;
+  height: 30px; }
+
+/*# sourceMappingURL=bookingcss.css.map */

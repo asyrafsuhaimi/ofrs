@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<ul>
+  <li class="icon">
+    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+  </li>
+  <li><a class="active" href="../index.html">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="reserve.html">Booking</a></li>
+  <li style="float:left"><a class="active" href="#">UTeM Online Facilities Registration System</a></li></ul>
+
+
+</ul>
+<div class="wrapper">
+  <form class="formdiv" method = "post" action = "reserveaction.php">
+    <div class="container">
+      <label class="bold">Reservation</label><br>
+      <label>Date:</label>
+      <input type="date" id="myDate" value="2014-02-09">      
+	  <label>Select a Time:</label>
+      <input type="time" name="time">
+	  <label>Event:</label>
+	  <input type="text" name="event" required><br>
+      <label>Venue:</label>
+	  <input type="text" name="venue" required><br>
+      
+	  <button>Register</button>
+      <button>Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+</body>
+</html>

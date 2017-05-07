@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<ul>
+  <li class="icon">
+    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+  </li>
+  <li><a class="active" href="/ofrs/index.html">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="/ofrs/account/reserve.html">Booking</a></li>
+  <li style="float:left"><a class="active" href="#">UTeM Online Facilities Registration System</a></li></ul>
+</ul>
+<div class="wrapper">
+  <form class="formdiv" method = "post" action="action.php" >
+    <div class="container">
+      <label class="bold">User Registration</label><br>
+      <label>First Name:</label>
+      <input class="nodent" type="text" name="firstname" required><br>
+      <label>Last Name:</label>
+      <input type="text" name="lastname" required><br>
+      <label>User Name:</label>
+      <input type="text" name="uname"required><br>
+      <label>Password:</label>
+      <input type="text" name="pword"required><br>
+      <label>IC-Number:</label>
+      <input type="text" name="icno" required><br>
+      <label>Email:</label>
+      <input type="text" name="email" required><br>
+      <label>Phone Number:</label>
+      <input type="number" name="phoneno" required><br>
+      <button>Register</button>
+      <button onclick="">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+</body>
+</html>

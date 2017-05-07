@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="/ofrs/style.css">
+</head>
+<body>
+<ul>
+  <li class="icon">
+    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+  </li>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="#">About</a></li>
+  <li style="float:left"><a class="active" href="#">UTeM Online Facilities Registration System</a></li></ul>
+
+</ul>
+</body>
+<body>
+<div class="w3-container">
+  <h1></h1>
+&nbsp &nbsp &nbsp 
+  <div class="w3-card-4" style="width:70%">
+    <header class="w3-container w3-light-grey">
+      <h3>Universiti Teknikal Malaysia Melaka (UTeM)<img src="utem.jpg" alt="Avatar" class="w3-left w3-square w3-margin-right" style="width:100px"></h3>
+    </header>
+    <div class="w3-container">
+   
+<hr>
+	  <p>Pust Pembangunan UTeM</p>
+      <p>Universiti Teknikal Malaysia Melaka (UTeM)</p>
+      <p>Hang Tuah Jaya, 76000, Melaka</p>
+	  <p>Tel: 06-3316362</p>
+	  <p>06-3316369 <img src="insta.jpg" alt="Avatar" class="w3-right w3-square w3-margin-right" style="width:50px"><img src="fb.png" alt="Avatar" class="w3-right w3-square w3-margin-right" style="width:40px"></p>
+	 
+    </div>
+   
+  </div>
+</div>
+</body>
+
+</html>
