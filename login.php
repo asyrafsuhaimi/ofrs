@@ -16,17 +16,17 @@ if (isset($_POST['login']))
 					}
 					else
 						{
-							echo "<script language=javascript>alert('Log masuk tidak berjaya. Sila cuba lagi!');window.location=login.php;</script>";
+							echo "<script language=javascript>alert('Log masuk tidak berjaya. Sila cuba lagi!');window.location=login2.php;</script>";
 						}
 					}
 				}
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Online Facilities Reservation System</title>
-	<link rel="stylesheet" type="text/css" href="css/bg.css" />
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="css/indexstyle.css">
+	<link rel="stylesheet" type="text/css" href="css/style2.css">
 	<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
 	<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 	<link href="SpryAssets/SpryValidationPassword.css" rel="stylesheet" type="text/css" />
@@ -36,18 +36,30 @@ if (isset($_POST['login']))
 </head>
 
 <body>
-	<table width="900" id="frame">
-		<tr>
-			<td id="banner"><img src="img/BANNER1.jpg" width="950" height="300" /></td>
-		</tr>
-		<tr>
-			<td height="50" id="menu"><ul id="MenuBar1" class="MenuBarHorizontal">
-				<li><a href="index.html">HOME</a></li>
-				<li><a href="#">ABOUT US</a></li>
-				<li><a href="#">CONTACT US</a></li>
-				<li><a href="index.php">LOGIN</a></li>
-			</ul></td>
-		</tr>
+
+		<div id="wrapper">
+			<div id="header">
+				<img src="img/title.png" alt="img/Logo UTeM" width="500" >
+				<img src="img/utem.png" alt="img/Logo UTeM" width="200" height="120"/>
+			</div>
+		</div>
+		<div id="navigation">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Facilities</a></li>
+				<li><a href="login.php">Login</a></li>
+				<li><a href="contact.html">Contact us</a></li>
+			</ul>
+		</div>
+		<div id="mr">
+	<tr>
+			<td height="33" id="menu">
+            <marquee class="font14" scrollamount="2"><font color="#F00"><strong>&#10003;</strong></font> Any facilities that customer want to rent avalaible on UTeM &nbsp &nbsp <font color="#FF0000"><strong>&#10003;</strong></font > Facilities that avalaible on UTeM included : Main Hall, Sport Centre, and others &nbsp &nbsp <font color="#FF0000"><strong>&#10003;</strong></font> For more information can contact the administrator</marquee>
+            </td>
+	</tr>
+</div>
+<div align="center"></br></br></br>
 		<tr>
 			<td id="content"><form id="form1" name="form1" method="post" action="">
 				<table width="500" id="login-box">
@@ -73,7 +85,7 @@ if (isset($_POST['login']))
 						<td>:</td>
 						<td align="left"><label for="username"></label>
 							<span id="sprytextfield1">
-							<input type="text" name="uname" id="username" /></br>
+							<input type="text" name="username" id="username" /></br>
 							<span class="textfieldRequiredMsg">Ruangan ini diperlukan</span></span>
 						</td>
 					</tr>
@@ -82,7 +94,7 @@ if (isset($_POST['login']))
 						<td>:</td>
 						<td align="left"><label for="password"></label>
 							<span id="sprypassword1">
-							<input type="password" name="pword" id="password" /></br>
+							<input type="password" name="password" id="password" /></br>
 							<span class="passwordRequiredMsg">Ruangan ini diperlukan</span></span>
 						</td>
 					</tr>
@@ -93,14 +105,14 @@ if (isset($_POST['login']))
 					</tr>
 					<tr>
 						<td colspan="3"><div align="center">
+						<h5><a href="./register/registeraccount.html">Register now</a></h5>
 							<input type="submit" name="login" id="login" value="Login" />
 							<input type="reset" name="reset" id="reset" value="Reset" />
 						</div></td>
 					</tr>
 					<tr>
 						<td colspan="3"><center>
-						<h5> <a href="/ofrs/register/registeraccount.html"> Register new user </a> </h5>
-						  <strong>Announcement:</strong> Customers are asked to use the <b>username</b> and <b>password</b> to login to the portal. Any problem, please forward it to administrator.
+						  <strong>Announcement:</strong> Staff are required to use a User Name and Password to login to the portal. Any problem, please forward it to administrator.
 					  </center></td>
 					</tr>
 					<tr>
@@ -109,10 +121,26 @@ if (isset($_POST['login']))
 				</table>
 			</form></td>
 		</tr>
-		<tr>
-			<td height="52" id="footer">OFRS<br />University Technical Malaysia Melaka</td>
-		</tr>
-	</table>
+	</div>
+</tr>
+	
+	
+<!--  -->
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div id="footer">
+<CENTER>Copyright © UTeM, 2017</CENTER>
+</div>
+
+</div>
+
+</div>
+
 	<script type="text/javascript">
 		var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
 		var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {validateOn:["change"]});

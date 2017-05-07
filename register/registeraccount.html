@@ -2,23 +2,37 @@
 <html>
 <head>
   <title>Sign Up</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet"  type="text/css" href="../css/indexstyle.css">
 </head>
 <body>
+
+
+<div id="wrapper">
+<div id="header">
+<img src="../img/title.png" alt="img/Logo UTeM" width="500" >
+<img src="../img/utem.png" alt="img/Logo UTeM" width="200" height="100"/>
+</div>
+
+<div id="navigation">
 <ul>
-  <li class="icon">
-    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
-  </li>
-  <li><a class="active" href="/ofrs/index.html">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-  <li><a href="/ofrs/account/reserve.html">Booking</a></li>
-  <li style="float:left"><a class="active" href="#">UTeM Online Facilities Registration System</a></li></ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Facilities</a></li>
+<li><a href="../login.php">Login</a></li>
+<li><a href="../contact.html">Contact us</a></li>
 </ul>
+</div>
+<div id="mr">
+  <tr>
+      <td height="33" id="menu">
+            <marquee class="font14" scrollamount="2"><font color="#F00"><strong>&#10003;</strong></font> Any facilities that customer want to rent avalaible on UTeM &nbsp &nbsp <font color="#FF0000"><strong>&#10003;</strong></font > Facilities that avalaible on UTeM included : Main Hall, Sport Centre, and others &nbsp &nbsp <font color="#FF0000"><strong>&#10003;</strong></font> For more information can contact the administrator</marquee>
+            </td>
+  </tr>
+</div>
+
 <div class="wrapper">
-  <form class="formdiv" method = "post" action="action.php" >
-    <div class="container">
+  <form class="formdiv" method = "post" action="action.php" id="registrationForm" >
+    <div class="container" >
       <label class="bold">User Registration</label><br>
       <label>First Name:</label>
       <input class="nodent" type="text" name="firstname" required><br>

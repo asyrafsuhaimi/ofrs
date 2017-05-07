@@ -1,0 +1,15 @@
+img { 
+display: block;
+ }
+ img.{
+ max-width: 70%; margin: 30px 0px;
+ } 
+img.align-right {
+ float: right; margin-left: 30px;
+ }
+ div.article-container { 
+border: 5px solid red; margin: 5px; padding: 5px;
+ } 
+.clearfix:after { 
+content: ""; display: table; clear: both; 
+}
