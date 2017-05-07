@@ -1,7 +1,6 @@
-
 <html>
 <head>
-
+<!--Testing GitHub-->
 <title>Online Facilities Reservation System</title>
 <link rel="stylesheet"href="../css/indexstyle.css"type="text/css">
 <link rel="stylesheet"href="../css/bookingcss.css"type="text/css">
@@ -86,13 +85,13 @@
     var img = document.createElement('img');
     img.src = "../img/plus.png";
     var table = document.getElementById("myTable");
-    
+
     var date = new Date(document.getElementById("myDate").value);
     if ((table.rows.length)>1){
       for (i=0;i<7;i++) {
         table.deleteRow(-1);
       }
-      
+
     }
     for(i=1;i<8;i++)
     {
