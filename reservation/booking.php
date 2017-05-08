@@ -94,8 +94,9 @@
     var img = document.createElement('img');
     img.src = "../img/plus.png";
     var table = document.getElementById("myTable");
-
     var date = new Date(document.getElementById("myDate").value);
+    var time=  new Date();
+    time.setHours(8);
     if ((table.rows.length)>1){
       for (i=0;i<1;i++) {
         table.deleteRow(- 1);
@@ -106,12 +107,13 @@
     {
     var row = table.insertRow(i);
     var b = row.insertCell(0);
-    b.innerHTML = date.getDate()+"-"+date.getMonth()+"-"+date.getFullYear();
-    date.setDate(date.getDate() + 1);
+    b.innerHTML = date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear();
+    //date.setDate(date.getDate() + 1);
       for(a=1;a<8;a++)
       {
         var r = row.insertCell(a);
-        r.innerHTML="<a href='bookingdetail.php'><img width='30' height='30' class='centerimg' src='../img/plus.png'></a>";
+        r.innerHTML="<form method='get' action='bookingdetail.php'><input type='hidden' name='time' value="+time.getHours()+".00-"+(time.getHours()+2)+".00><button name='date' class='centerimg' value="+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()+"><img width='30' height='30' class='centerimg' src='../img/plus.png'></button></form>";
+        time.setHours(time.getHours()+2);
       }
     }
 

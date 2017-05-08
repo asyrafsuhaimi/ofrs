@@ -44,7 +44,10 @@
             <td>Facility</td><td><input type="text"></td>
           </tr>
           <tr>
-            <td>Booking Date</td><td><input type="text"></td>
+            <td>Booking Date</td><td><input type="text" value="<?php echo$_GET['date'] ?>"></td>
+          </tr>
+          <tr>
+            <td>Booking Date</td><td><input type="text" value="<?php echo$_GET['time'] ?>"></td>
           </tr>
         </table>
         <br>
