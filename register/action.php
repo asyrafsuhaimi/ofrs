@@ -26,7 +26,7 @@ if (mysqli_query($conn, $sql))
   echo '<script language="javascript">';
   echo 'alert("Record Succesfully Created")';
   echo '</script>';
-  echo "<script language=javascript>window.location='/ofrs/login2.php';</script>";
+  echo "<script language=javascript>window.location='/ofrs/login.php';</script>";
 }
 else
 {

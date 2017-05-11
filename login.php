@@ -12,16 +12,15 @@ if (isset($_POST['login']))
 					$rows_login_account=$result_login_account->fetch_array();
 					if($total_login_account=$result_login_account->num_rows)
 					{
-					header ('Location:account/index.php');
+					header ('Location:reservation/booking.php');
 					}
 					else
 						{
-							echo "<script language=javascript>alert('Log masuk tidak berjaya. Sila cuba lagi!');window.location=login2.php;</script>";
+							echo "<script language=javascript>alert('Username or password incorrect ! Try again');window.location=login.php;</script>";
 						}
 					}
 				}
 ?>
-
 <html>
 <head>
 	<title>Login</title>
@@ -85,7 +84,7 @@ if (isset($_POST['login']))
 						<td>:</td>
 						<td align="left"><label for="username"></label>
 							<span id="sprytextfield1">
-							<input type="text" name="username" id="username" /></br>
+							<input type="text" name="uname" id="username" /></br>
 							<span class="textfieldRequiredMsg">Ruangan ini diperlukan</span></span>
 						</td>
 					</tr>
@@ -94,7 +93,7 @@ if (isset($_POST['login']))
 						<td>:</td>
 						<td align="left"><label for="password"></label>
 							<span id="sprypassword1">
-							<input type="password" name="password" id="password" /></br>
+							<input type="password" name="pword" id="password" /></br>
 							<span class="passwordRequiredMsg">Ruangan ini diperlukan</span></span>
 						</td>
 					</tr>
