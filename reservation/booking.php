@@ -54,7 +54,7 @@
                   <option value="dewan_besar">Dewan Besar</option>
                   <option value="masjid">Masjid</option>
                   <option value="perpustakaan">Perpustakaan</option>
-                  <<option value="bas">Bas</option>>
+                  <option value="bas">Bas</option>
                 </td>
               </tr>
             </select>
