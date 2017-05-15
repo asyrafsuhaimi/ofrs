@@ -38,7 +38,7 @@
       <div class="center">
         <h2>Dewan Besar UTeM</h2>
         <div class="imgdewan">
-          <img src="../img/dewan.jpg" alt="dewan UTeM" width="450" height="200">
+          <img src="../img/dewan.jpg" id="myImg" alt="dewan UTeM" width="450" height="200">
         </div>
         <div class="date">
           <table class="options">
@@ -50,8 +50,11 @@
             <tr>
               <td>Facilities:</td>
                 <td>
-                  <select>
-                  <option>Dewan Besar<option>
+                  <select id="facility" onchange="myFacility(this);">
+                  <option value="dewan_besar">Dewan Besar</option>
+                  <option value="masjid">Masjid</option>
+                  <option value="perpustakaan">Perpustakaan</option>
+                  <<option value="bas">Bas</option>>
                 </td>
               </tr>
             </select>
@@ -70,11 +73,7 @@
                ?>
              </th>
           </tr>
-
-
-
         </table>
-
         </div>
 
 <!--  -->
@@ -116,6 +115,26 @@
         time.setHours(time.getHours()+2);
       }
     }
+
+  }
+
+  function myFacility(element){
+    var text = element.options[element.selectedIndex].text;
+
+    if(text=='Perpustakaan')
+    {
+      document.getElementById("myImg").src="../img/lib.jpg";
+    }
+    else if (text=='Dewan Besar') {
+      document.getElementById("myImg").src="../img/dewan.jpg";
+    }
+    else if (text=='Masjid') {
+      document.getElementById("myImg").src="../img/masjid.jpg";
+    }
+    else if (text=='Bas') {
+      document.getElementById("myImg").src="../img/bas.jpg";
+    }
+
 
   }
   </script>
