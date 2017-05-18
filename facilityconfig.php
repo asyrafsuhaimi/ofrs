@@ -4,7 +4,7 @@
     $facilityimage = "";
     $location = "";
     $price = "";
-    $sql_customer ="SELECT * FROM `customerdetail` WHERE username like '".$_SESSION['login']."'";
+    $sql_customer ="SELECT * FROM `facility` WHERE name like '".$_SESSION['login']."'";
     $result = mysqli_query($conn,$sql_customer);
     if(mysqli_num_rows($result)>0){
   		while ($customer_result = mysqli_fetch_array($result)) {

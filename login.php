@@ -48,8 +48,8 @@ if (isset($_POST['login']))
 				<li><a href="index.php">Home</a></li>
 				<li><a href="#">About Us</a></li>
 				<li><a href="#">Facilities</a></li>
-				<li><a href="login.php">Login</a></li>
 				<li><a href="contact.html">Contact us</a></li>
+				<li style="float:right"><a href="login.php">Login</a></li>
 			</ul>
 		</div>
 		<div id="mr">

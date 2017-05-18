@@ -12,15 +12,12 @@ $facilityname = $_POST['facilityname'];
 $bookingdate = $_POST['bookingdate'];
 $bookingtime = $_POST['bookingtime'];
 
-$sql23="INSERT INTO reservation(customerid, facilityname, bookingdate, bookingtime) VALUES ('$customerid',\''$facilityname'\','$bookingdate','$bookingtime')";
+$sql_reservation="INSERT INTO reservation(customerid, facilityname, bookingdate, bookingtime) VALUES ('$customerid','$facilityname','$bookingdate','$bookingtime')";
 
-echo $customerid;
-echo $facilityname;
-echo $bookingtime;
-echo $bookingdate;
-if (mysqli_query($conn,$sql23)){
+if (mysqli_query($conn,$sql_reservation)){
 	echo '<script language="javascript">';
-  	echo 'alert("Facility Reserved")';
+  echo 'alert("Facility Reserved")';
  	echo '</script>';
+	echo "<script language=javascript>window.location='/ofrs/index.php';</script>";
 }
 ?>
