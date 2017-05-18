@@ -41,7 +41,7 @@ require_once('../customerconfig.php');
 	      </tr>
     </div>
     <div id="content-container">
-
+    <form method="post" action="action.php">
       <div class="center">
         <table>
           <tr>
@@ -57,20 +57,23 @@ require_once('../customerconfig.php');
             <td>Email</td><td><input type="text" name="email" value="<?php echo$email;?>"></td>
           </tr>
           <tr>
-            <td>Facility</td><td><input type="text" value="<?php echo$_GET['name']?>"></td>
+            <td>Facility</td><td><input type="text" name="facilityname" value="<?php echo$_GET['name']?>"></td>
           </tr>
           <tr>
-            <td>Booking Date</td><td><input type="text" value="<?php echo$_GET['date'] ?>"></td>
+            <td>Booking Date</td><td><input type="text" name="bookingdate" value="<?php echo$_GET['date'] ?>"></td>
           </tr>
           <tr>
-            <td>Booking Time</td><td><input type="text" value="<?php echo$_GET['time'] ?>"></td>
+            <td>Booking Time</td><td><input type="text" name="bookingtime" value="<?php echo$_GET['time'] ?>"></td>
           </tr>
         </table>
         <br>
         <div class="btncenter">
             <button class="btn btn1">Submit</button><button class="btn btn2">Cancel</button>
         </div>
+
         </div>
+      </form>
+    </div>
 
 <!--  -->
 
