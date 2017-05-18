@@ -5,14 +5,15 @@ include('config.php');
 //secure page
 if (isset($_POST['login']))
 {
-				$sql_login_account = "SELECT * FROM account WHERE uname='".$uname."'AND pword='".$pword."'";
-	
+				$sql_login_account = "SELECT * FROM customerdetail WHERE username='".$uname."'AND password='".$pword."'";
+
 				if($result_login_account=$connect->query($sql_login_account))
 				{
 					$rows_login_account=$result_login_account->fetch_array();
 					if($total_login_account=$result_login_account->num_rows)
 					{
-					header ('Location:reservation/booking.php');
+					$_SESSION['login']=$uname;
+					header ('Location:index.php');
 					}
 					else
 						{
@@ -44,7 +45,7 @@ if (isset($_POST['login']))
 		</div>
 		<div id="navigation">
 			<ul>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 				<li><a href="#">About Us</a></li>
 				<li><a href="#">Facilities</a></li>
 				<li><a href="login.php">Login</a></li>
@@ -122,8 +123,8 @@ if (isset($_POST['login']))
 		</tr>
 	</div>
 </tr>
-	
-	
+
+
 <!--  -->
 </br>
 </br>

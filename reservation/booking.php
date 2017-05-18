@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['login']))
+{
+	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/Asyraf/uvrs/Userlogin.php';</script>";
+}
+require_once('../connect.php');
+require_once('../customerconfig.php');
+ ?>
 <html>
 <head>
 <!--Testing GitHub-->
@@ -36,9 +46,9 @@
         <tr>
           <td height="800px" valign="top">
       <div class="center">
-        <h2>Dewan Besar UTeM</h2>
+        <h2 id = "myTitle"><?php echo$_POST['name'];?></h2>
         <div class="imgdewan">
-          <img src="../img/dewan.jpg" id="myImg" alt="dewan UTeM" width="450" height="200">
+          <img src="<?php echo$_POST['facility']?>" id="myImg" alt="dewan UTeM" width="450" height="200">
         </div>
         <div class="date">
           <table class="options">
@@ -51,13 +61,10 @@
               <td>Facilities:</td>
                 <td>
                   <select id="facility" onchange="myFacility(this);">
-                  <option value="dewan_besar">Dewan Besar</option>
-                  <option value="masjid">Masjid</option>
-                  <option value="perpustakaan">Perpustakaan</option>
-                  <option value="bas">Bas</option>
+                  <option value="<?php echo$_POST['name']?>"><?php echo$_POST['name'] ?></option>
+									</select>
                 </td>
               </tr>
-            </select>
           </form>
           </table>
         </div>
@@ -90,6 +97,7 @@
 
   <script>
   function myFunction() {
+		//var facilityname = new String(document.getElementById("myTitle"));
     var img = document.createElement('img');
     img.src = "../img/plus.png";
     var table = document.getElementById("myTable");
@@ -111,7 +119,7 @@
       for(a=1;a<8;a++)
       {
         var r = row.insertCell(a);
-        r.innerHTML="<form method='get' action='bookingdetail.php'><input type='hidden' name='time' value="+time.getHours()+".00-"+(time.getHours()+2)+".00><button name='date' class='centerimg' value="+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()+"><img width='30' height='30' class='centerimg' src='../img/plus.png'></button></form>";
+        r.innerHTML="<form method='get' action='bookingdetail.php'><input type='hidden' name='name' value='<?php echo$_POST['name']?>''><input type='hidden' name='time' value="+time.getHours()+".00-"+(time.getHours()+2)+".00><button name='date' class='centerimg' value="+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()+"><img width='30' height='30' class='centerimg' src='../img/plus.png'></button></form>";
         time.setHours(time.getHours()+2);
       }
     }
@@ -124,15 +132,19 @@
     if(text=='Perpustakaan')
     {
       document.getElementById("myImg").src="../img/lib.jpg";
+      document.getElementById("myTitle").innerHTML = "Perpustakaan";
     }
-    else if (text=='Dewan Besar') {
+    else if ((text=='Dewan Besar')||(text=='Main Hall')||(text=='Banquet Hall')||(text=='VVIP Room')) {
       document.getElementById("myImg").src="../img/dewan.jpg";
+      document.getElementById("myTitle").innerHTML = "Dewan Besar";
     }
     else if (text=='Masjid') {
       document.getElementById("myImg").src="../img/masjid.jpg";
+      document.getElementById("myTitle").innerHTML = "Masjid";
     }
     else if (text=='Bas') {
       document.getElementById("myImg").src="../img/bas.jpg";
+      document.getElementById("myTitle").innerHTML = "Bas";
     }
 
 

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['login']))
+{
+	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/Asyraf/uvrs/Userlogin.php';</script>";
+}
+require_once('../connect.php');
+require_once('../customerconfig.php');
+ ?>
 <html>
 <head>
 
@@ -16,7 +26,7 @@
 
     <div id="navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Facilities</a></li>
         <li><a href="login.php">Login</a></li>
@@ -35,19 +45,25 @@
       <div class="center">
         <table>
           <tr>
-            <td>Reservation ID</td><td><input type="text"></td>
+            <td>Customer Name</td><td><input type="text" name="name" value = "<?php echo$firstname." ".$lastname;?>"></td>
           </tr>
           <tr>
-            <td>Customer Name</td><td><input type="text"></td>
+            <td>Customer IC Number</td><td><input type="text" name="icno" value="<?php echo$icno;?>"></td>
           </tr>
           <tr>
-            <td>Facility</td><td><input type="text"></td>
+            <td>Customer Phone Number</td><td><input type="text" name="phoneno" value="<?php echo$phoneno;?>"></td>
+          </tr>
+          <tr>
+            <td>Email</td><td><input type="text" name="email" value="<?php echo$email;?>"></td>
+          </tr>
+          <tr>
+            <td>Facility</td><td><input type="text" value="<?php echo$_GET['name']?>"></td>
           </tr>
           <tr>
             <td>Booking Date</td><td><input type="text" value="<?php echo$_GET['date'] ?>"></td>
           </tr>
           <tr>
-            <td>Booking Date</td><td><input type="text" value="<?php echo$_GET['time'] ?>"></td>
+            <td>Booking Time</td><td><input type="text" value="<?php echo$_GET['time'] ?>"></td>
           </tr>
         </table>
         <br>

@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['login']))
+{
+	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/Asyraf/uvrs/Userlogin.php';</script>";
+}
+ ?>
 <html>
 <head>
 
@@ -15,9 +23,9 @@
 
 <div id="navigation">
 <ul>
-<li><a href="index.html">Home</a></li>
+<li><a href="index.php">Home</a></li>
 <li><a href="#">About Us</a></li>
-<li><a href="#">Facilities</a></li>
+<li><a href="../ofrs/facility/menu.php">Facilities</a></li>
 <li><a href="login.php">Login</a></li>
 <li><a href="contact.html">Contact us</a></li>
 </ul>
@@ -39,7 +47,7 @@ any events. The purpose of this system is to prepare facilites for reservation.<
 <img src="./img/faci.png">
 </div>
 
-<!-- 
+<!--
 add comment to test tortoiseSVN
  -->
 

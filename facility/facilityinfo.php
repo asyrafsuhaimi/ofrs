@@ -1,3 +1,24 @@
+<?php
+	require_once('../connect.php');
+	if(isset($_GET['facility'])){
+	}
+
+  $sql_facility ="SELECT * FROM `facility` WHERE name like '".$_GET['facility']."'";
+	$result = mysqli_query($conn,$sql_facility);
+	if(mysqli_num_rows($result)>0){
+		while ($facility_result = mysqli_fetch_array($result)) {
+			$name = $facility_result['name'];
+			$facilitydescription = $facility_result['facilitydescription'];
+			$facilityimage = $facility_result['facilityimage'];
+			$location = $facility_result['location'];
+			$price = $facility_result['price'];
+			$facilityid = $facility_result['facilityid'];
+
+		}
+
+
+	}
+ ?>
 <html>
 <head>
 
@@ -41,8 +62,17 @@
     </td>
   </tr>
   <tr>
-    <td><div id="myFacilityImg"></td><td>Details Information</td>
+    <td><div id="myImg"></div></td>
+		<td>Details Information <br><br><?php echo $facilitydescription; echo"<br>$location"; echo "<br> $price";?></td>
   </tr>
+	<tr>
+		<td>
+			<form method = "post" action="../reservation/booking.php">
+				<input type="hidden" name="name" value="<?php echo$name?>">
+				<button name="facility" value="<?php echo$facilityimage;?>">Make A Reservation</button>
+			</form>
+		<td>
+	</tr>
 </table>
 
 <!--  -->
@@ -59,6 +89,16 @@
 </div>
 
 </div>
-
+<script>
+	window.onload=function(){
+		var img = document.createElement("img");
+		img.setAttribute("src","<?php echo $facilityimage;?>");
+		img.setAttribute("height","200");
+		img.setAttribute("width","450");
+		document.getElementById("myImg").appendChild(img);
+		//document.getElementById(myImg).src = "<?php echo $facilityimage;?>";
+	}
+</script>
 </body>
+
 </html>

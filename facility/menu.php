@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['login']))
+{
+	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/ofrs/login.php';</script>";
+}
+ ?>
 <html>
 <head>
 
@@ -35,9 +43,9 @@
     <td><img src="../img/dewan.jpg" id="myImg" alt="dewan UTeM" width="450" height="200"></td>
     <td>
       <ul>
-        <li>Main Hall</li>
-        <li>Banquet Hall</li>
-        <li>VVIP Room</li>
+        <li><a href="facilityinfo.php?facility=Main Hall">Main Hall</a></li>
+        <li><a href="facilityinfo.php">Banquet Hall</a></li>
+        <li><a href="facilityinfo.php">VVIP Room</a></li>
       </ul>
     </td>
   </tr>
@@ -45,9 +53,9 @@
     <td><img src="../img/asrama.jpg" id="myImg" alt="asrama" width="450" height="200"></td>
     <td>
       <ul>
-        <li>Kolej Kediaman Lestari</li>
-        <li>Kolej Kediaman Bunga Raya</li>
-        <li>Kolej Kediaman Emerald</li>
+        <li><a href="facilityinfo.php">Kolej Kediaman Lestari</a></li>
+        <li><a href="facilityinfo.php">Kolej Kediaman Bunga Raya</a></li>
+        <li><a href="facilityinfo.php">Kolej Kediaman Emerald</a></li>
         <li>Kolej Kediaman Al-Jazari</li>
         <li>Kolej Kediaman Seri Utama</li>
       </ul>

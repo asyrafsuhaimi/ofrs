@@ -19,7 +19,7 @@ if (!$conn)
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO account(firstname, lastname, uname, pword, icno, email, phoneno) VALUES ('$firstname','$lastname','$uname','$pword','$icno','$email','$phoneno')";
+$sql = "INSERT INTO customerdetail(customerid,firstname,lastname,icno,phoneno,email,username,password) VALUES ('DEFAULT','$firstname','$lastname','$icno','$phoneno','$email','$uname','$pword')";
 
 if (mysqli_query($conn, $sql))
 {
