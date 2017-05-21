@@ -11,8 +11,9 @@ include('../customerconfig.php');
 $facilityname = $_POST['facilityname'];
 $bookingdate = $_POST['bookingdate'];
 $bookingtime = $_POST['bookingtime'];
+$status = "Pending Approval";
 
-$sql_reservation="INSERT INTO reservation(customerid, facilityname, bookingdate, bookingtime) VALUES ('$customerid','$facilityname','$bookingdate','$bookingtime')";
+$sql_reservation="INSERT INTO reservation(customerid, facilityname, bookingdate, bookingtime, status) VALUES ('$customerid','$facilityname','$bookingdate','$bookingtime','$status')";
 
 if (mysqli_query($conn,$sql_reservation)){
 	echo '<script language="javascript">';

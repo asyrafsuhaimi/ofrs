@@ -4,21 +4,21 @@ body{
   background-position: center;
 }
 #wrapper
-{ 
+{
 	margin: 0 auto;
 	width: 100%;
-	 
-}	
+
+}
 
 #header
-{ 
+{
 	//background: #2B8BD5;
 	padding: 20px;
 	text-align: center;
 }
 
 #header h1 { margin: 0;
-	font:italic normal 3em georgia; 
+	font:italic normal 3em georgia;
 	color:#fff;
 
 }
@@ -28,18 +28,18 @@ body{
 }
 
 #navigation ul
-{ 
+{
 	list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-	
+
 }
 
 
 #navigation li a
-{ 
+{
 	float: left;
 	padding: 5px 10px; color: #fff;
 	text-decoration: none;
@@ -51,14 +51,14 @@ body{
 { background: #736F6E; }
 
 #content-container
-{ 
+{
 	float: left;
 	width: 100%;
-	
+
 }
 
 #main
-{ 
+{
 	clear: left;
 	float: left;
 	width: 90%;
@@ -80,7 +80,7 @@ body{
 }
 
 #footer
-{ 
+{
 	clear: left;
 	background: #ccc;
 	text-align: center;
@@ -111,7 +111,7 @@ body{
 
 .container {
   text-transform: uppercase;
-  
+
   padding: 30px;
   background-color: white;
   border-radius: 20px 50px;
@@ -131,5 +131,5 @@ body{
   float: center;
   width: 100%;
   margin-left: 50px;
-  
+
   background-repeat: no-repeat; }

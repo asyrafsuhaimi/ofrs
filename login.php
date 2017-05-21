@@ -6,21 +6,27 @@ include('config.php');
 if (isset($_POST['login']))
 {
 				$sql_login_account = "SELECT * FROM customerdetail WHERE username='".$uname."'AND password='".$pword."'";
+				$sql_login_account1 = "SELECT * FROM employee WHERE username='".$uname."'AND password='".$pword."'";
 
-				if($result_login_account=$connect->query($sql_login_account))
+				if(($result_login_account=$connect->query($sql_login_account))&&($result_login_account1=$connect->query($sql_login_account1)))
 				{
 					$rows_login_account=$result_login_account->fetch_array();
+					$rows_login_account1=$result_login_account1->fetch_array();
 					if($total_login_account=$result_login_account->num_rows)
 					{
 					$_SESSION['login']=$uname;
-					header ('Location:index.php');
+					header ('Location:/ofrs/customer/index.php');
+					}
+					elseif ($total_login_account1=$result_login_account1->num_rows) {
+						$_SESSION['login']=$uname;
+						header ('Location:/ofrs/admin/index.php');
 					}
 					else
 						{
 							echo "<script language=javascript>alert('Username or password incorrect ! Try again');window.location=login.php;</script>";
 						}
 					}
-				}
+	}
 ?>
 <html>
 <head>
@@ -49,7 +55,6 @@ if (isset($_POST['login']))
 				<li><a href="#">About Us</a></li>
 				<li><a href="#">Facilities</a></li>
 				<li><a href="contact.html">Contact us</a></li>
-				<li style="float:right"><a href="login.php">Login</a></li>
 			</ul>
 		</div>
 		<div id="mr">

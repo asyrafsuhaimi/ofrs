@@ -24,6 +24,7 @@
 
 <title>Online Facilities Reservation System</title>
 <link rel="stylesheet" href="../css/indexstyle.css"type="text/css">
+<link rel="stylesheet" href="../css/facilityinfo.css"type="text/css">
 </head>
 
 <body>
@@ -50,26 +51,38 @@
             </td>
 	</tr>
 </div>
-<table>
+<table class="center">
   <tr>
     <td>
-      <select>
-        <option>Dewan Besar</option>
-        <option>Main Hall</option>
+			<form method="get" action="">
+      <select name="facility">
+				<option value="" disabled selected>Choose Other Facility</option>
+        <option value="Bunga Raya">Bunga Raya Hostel</option>
+        <option value-"Main Hall">Main Hall</option>
         <option>Banquet Hall</option>
         <option>VVIP Room</option>
       </select>
+			<input type="submit" name="submit" class="btn btn1">
+		</form>
     </td>
   </tr>
   <tr>
     <td><div id="myImg"></div></td>
-		<td>Details Information <br><br><?php echo $facilitydescription; echo"<br>$location"; echo "<br> $price";?></td>
+		<td>
+				<h3 class="name"><?php echo $name?></h3>
+				<div class="box">
+					<h3>Details Information</h3>
+					<p align="justify"><?php echo $facilitydescription?></p>
+					<p>Price : <?php echo "$price";?></p>
+				</div>
+		</td>
   </tr>
 	<tr>
-		<td>
+		<td colspan="2">
+			<br/>
 			<form method = "post" action="../reservation/booking.php">
 				<input type="hidden" name="name" value="<?php echo$name?>">
-				<button name="facility" value="<?php echo$facilityimage;?>">Make A Reservation</button>
+				<button class="btn btn1 centerbtn"name="facility" value="<?php echo$facilityimage;?>">Make A Reservation</button>
 			</form>
 		<td>
 	</tr>

@@ -72,7 +72,7 @@ td:hover {
   border: 2px solid red; }
 
 .btncenter {
-  margin-left: 41%; }
+  margin-left: 43%; }
 
 .date {
   padding-bottom: 5px; }
@@ -86,5 +86,8 @@ td:hover {
 .options {
   not(table,th,td)-background-color: none;
   not(table,th,td)-color: none; }
+
+.space {
+  margin-bottom: 200px; }
 
 /*# sourceMappingURL=bookingcss.css.map */

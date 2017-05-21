@@ -7,6 +7,19 @@ if(!isset($_SESSION['login']))
 }
 require_once('../connect.php');
 require_once('../customerconfig.php');
+$sql_facility ="SELECT * FROM `facility` WHERE name like '".$_GET['name']."'";
+$result = mysqli_query($conn,$sql_facility);
+if(mysqli_num_rows($result)>0){
+	while ($facility_result = mysqli_fetch_array($result)) {
+		$name = $facility_result['name'];
+		$facilitydescription = $facility_result['facilitydescription'];
+		$facilityimage = $facility_result['facilityimage'];
+		$location = $facility_result['location'];
+		$price = $facility_result['price'];
+		$facilityid = $facility_result['facilityid'];
+
+	}
+}
  ?>
 <html>
 <head>
@@ -41,9 +54,12 @@ require_once('../customerconfig.php');
 	      </tr>
     </div>
     <div id="content-container">
-    <form method="post" action="action.php">
+    <form class="space" method="post" action="action.php">
       <div class="center">
         <table>
+				<tr>
+					<img class="centerimg"src="<?php echo$facilityimage?>" id="myImg" alt="dewan UTeM" width="450" height="200"><br/>
+				</tr>
           <tr>
             <td>Customer Name</td><td><input type="text" name="name" value = "<?php echo$firstname." ".$lastname;?>"></td>
           </tr>
@@ -68,11 +84,14 @@ require_once('../customerconfig.php');
         </table>
         <br>
         <div class="btncenter">
-            <button class="btn btn1">Submit</button><button class="btn btn2">Cancel</button>
+            <button class="btn btn1" onclick = "return confirm('Are You Sure You Want To Confirm The Reservation?')">Confirm Reservation</button>
+      </form>
+			<form action="../facility/menu.php">
+						<button class="btn btn2" onclick = "return confirm('Are You Sure You Want To Cancel The Reservation?')">Cancel Reservations</button>
+			</form>
         </div>
 
         </div>
-      </form>
     </div>
 
 <!--  -->

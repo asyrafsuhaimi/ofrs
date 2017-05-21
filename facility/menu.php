@@ -11,6 +11,7 @@ if(!isset($_SESSION['login']))
 
 <title>Online Facilities Reservation System</title>
 <link rel="stylesheet" href="../css/indexstyle.css"type="text/css">
+<link rel="stylesheet" href="../css/menu.css"type="text/css">
 </head>
 
 <body>
@@ -26,7 +27,6 @@ if(!isset($_SESSION['login']))
 <li><a href="index.html">Home</a></li>
 <li><a href="#">About Us</a></li>
 <li><a href="#">Facilities</a></li>
-<li><a href="login.php">Login</a></li>
 <li><a href="contact.html">Contact us</a></li>
 </ul>
 </div>
@@ -38,44 +38,68 @@ if(!isset($_SESSION['login']))
 	</tr>
 </div>
 
-<table>
+<table class = "center">
   <tr>
-    <td><img src="../img/dewan.jpg" id="myImg" alt="dewan UTeM" width="450" height="200"></td>
+    <td>
+      <div class="overlay-container">
+      <img src="../img/dewan.jpg" id="myImg" alt="dewan UTeM" width="450" height="200">
+      <div class = "overlay">
+        <div class="text">Halls And Rooms</div>
+      </div>
+    </div>
+    </td>
     <td>
       <ul>
         <li><a href="facilityinfo.php?facility=Main Hall">Main Hall</a></li>
-        <li><a href="facilityinfo.php">Banquet Hall</a></li>
-        <li><a href="facilityinfo.php">VVIP Room</a></li>
+        <li><a href="facilityinfo.php?facility=Banquet Hall">Banquet Hall</a></li>
+        <li><a href="facilityinfo.php?facility=VVIP Room">VVIP Room</a></li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td><img src="../img/asrama.jpg" id="myImg" alt="asrama" width="450" height="200"></td>
+    <td>
+      <div class="overlay-container">
+      <img src="../img/asrama.jpg" id="myImg" alt="dewan UTeM" width="450" height="200">
+      <div class = "overlay1">
+        <div class="text">Acommodations</div>
+      </div>
+    </div>
+    </td>
     <td>
       <ul>
-        <li><a href="facilityinfo.php">Kolej Kediaman Lestari</a></li>
-        <li><a href="facilityinfo.php">Kolej Kediaman Bunga Raya</a></li>
-        <li><a href="facilityinfo.php">Kolej Kediaman Emerald</a></li>
-        <li>Kolej Kediaman Al-Jazari</li>
-        <li>Kolej Kediaman Seri Utama</li>
+        <li><a href="facilityinfo.php?facility=Lestari">Kolej Kediaman Lestari</a></li>
+        <li><a href="facilityinfo.php?facility=Aljazari">Kolej Kediaman Aljazari</a></li>
+        <li><a href="facilityinfo.php?facility=Bunga Raya">Kolej Kediaman Bunga Raya</a></li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td><img src="../img/bas.jpg" id="myImg" alt="bas" width="450" height="200"></td>
+    <td>
+      <div class="overlay-container">
+      <img src="../img/bas.jpg" id="myImg" alt="Bas UTeM" width="450" height="200">
+      <div class = "overlay2">
+        <div class="text">Transportations</div>
+      </div>
+    </div>
+    </td>
     <td>
       <ul>
-        <li>Bas</li>
-        <li>Van</li>
-        <li>Lori</li>
+        <li><a href="facilityinfo.php?facility=Bus">Bus</a></li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td><img src="../img/masjid.jpg" id="myImg" alt="perpustakaan" width="450" height="200"></td>
+    <td>
+      <div class="overlay-container">
+      <img src="../img/masjid.jpg" id="myImg" alt="Masjid UTeM" width="450" height="200">
+      <div class = "overlay3">
+        <div class="text">Mosque</div>
+      </div>
+    </div>
+    </td>
     <td>
       <ul>
-        <li>Main Praying Hall</li>
+        <li><a href="facilityinfo.php?facility=Main Praying Hall">Main Praying Hall</a></li>
       </ul>
     </td>
   </tr>
