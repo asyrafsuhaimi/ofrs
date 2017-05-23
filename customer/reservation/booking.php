@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['login']))
 {
-	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/Asyraf/uvrs/Userlogin.php';</script>";
+	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/ofrs/login.php';</script>";
 }
 require_once('../connect.php');
 require_once('../customerconfig.php');
@@ -25,13 +25,24 @@ require_once('../customerconfig.php');
     </div>
 
     <div id="navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Facilities</a></li>
-        <li><a href="login.php">Login</a></li>
-        <li><a href="#">Contact us</a></li>
-      </ul>
+			<ul>
+			<li><a href="../index.php">Home</a></li>
+			<li><a href="#">About Us</a></li>
+			<li class="dropdown">
+				<a href="javascript:void(0)" class="dropbtn">Facilities</a>
+				<div class="dropdown-content">
+					<a href="../facility/menu.php">New Reservation</a>
+					<a href="../reservation/status.php">Reservation Status</a>
+				</div>
+			<li><a href="contact.html">Contact us</a></li>
+			<li style="float:right" class="dropdown">
+				<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
+				<div class="dropdown-content">
+					<a href="#">Account Details </a>
+					<a href="../logout.php">Logout </a>
+				</div>
+			</li>
+			</ul>
     </div>
     <div id="mr">
 	     <tr>
@@ -42,7 +53,7 @@ require_once('../customerconfig.php');
     </div>
 
     <div id="content-container">
-      <table>
+      <table width="850px">
         <tr>
           <td height="800px" valign="top">
       <div class="center">
@@ -53,6 +64,17 @@ require_once('../customerconfig.php');
         <div class="date">
           <table class="options">
           <form>
+						<tr>
+							<td>Type Of Booking</td>
+							<td>
+								<select id="bookingType">
+									<option value="" disabled selected></option>
+									<option value="day">Number Of Day</option>
+									<option value="hour">Number Of Hours</option>
+								</select>
+
+							</td>
+						</tr>
             <tr>
               <td>Date:</td>
                 <td><input type = "date" value="date" name="date" id="myDate" onchange="myFunction()"></td>
@@ -69,18 +91,13 @@ require_once('../customerconfig.php');
           </table>
         </div>
         <table id="myTable">
-          <tr>
-            <th>Time:
-              <?php
-                for($j = 8; $j<22; $j+=2)
-                {
-                  echo"<th>$j.00-".($j+2).".00</th>";
-                }
 
-               ?>
-             </th>
-          </tr>
         </table>
+				<form method='get' action='bookingdetail.php'>
+					<table id='myTableDay'>
+
+					</table>
+				</form>
         </div>
 
 <!--  -->
@@ -97,57 +114,52 @@ require_once('../customerconfig.php');
 
   <script>
   function myFunction() {
-		//var facilityname = new String(document.getElementById("myTitle"));
-    var img = document.createElement('img');
-    img.src = "/ofrs/img/plus.png";
-    var table = document.getElementById("myTable");
-    var date = new Date(document.getElementById("myDate").value);
-    var time=  new Date();
-    time.setHours(8);
-    if ((table.rows.length)>1){
-      for (i=0;i<1;i++) {
-        table.deleteRow(- 1);
-      }
+		var e = document.getElementById("bookingType");
+		var type = e.options[e.selectedIndex].value;
 
-    }
-    for(i=1;i<2;i++)
-    {
-    var row = table.insertRow(i);
-    var b = row.insertCell(0);
-    b.innerHTML = date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear();
-    //date.setDate(date.getDate() + 1);
-      for(a=1;a<8;a++)
-      {
-        var r = row.insertCell(a);
-        r.innerHTML="<form method='get' action='bookingdetail.php'><input type='hidden' name='name' value='<?php echo$_POST['name']?>''><input type='hidden' name='time' value="+time.getHours()+".00-"+(time.getHours()+2)+".00><button name='date' class='centerimg' value="+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()+"><img width='30' height='30' class='centerimg' src='/ofrs/img/plus.png'></button></form>";
-        time.setHours(time.getHours()+2);
-      }
-    }
+		if(type=="hour")
+		{
+			document.getElementById("myTable").innerHTML = "<tr><th>Time:<?php for($j = 8; $j<22; $j+=2) { echo'<th>'.$j.'.00-'.($j+2).'.00</th>';}  ?> </th></tr>";
+			var img = document.createElement('img');
+	    img.src = "/ofrs/img/plus.png";
+	    var table = document.getElementById("myTable");
+	    var date = new Date(document.getElementById("myDate").value);
+	    var time=  new Date();
+	    time.setHours(8);
+	    if ((table.rows.length)>1){
+	      for (i=0;i<1;i++) {
+	        table.deleteRow(- 1);
+	      }
 
-  }
-
-  function myFacility(element){
-    var text = element.options[element.selectedIndex].text;
-
-    if(text=='Perpustakaan')
-    {
-      document.getElementById("myImg").src="/ofrs/img/lib.jpg";
-      document.getElementById("myTitle").innerHTML = "Perpustakaan";
-    }
-    else if ((text=='Dewan Besar')||(text=='Main Hall')||(text=='Banquet Hall')||(text=='VVIP Room')) {
-      document.getElementById("myImg").src="/ofrs/img/dewan.jpg";
-      document.getElementById("myTitle").innerHTML = "Dewan Besar";
-    }
-    else if (text=='Masjid') {
-      document.getElementById("myImg").src="/ofrs/img/masjid.jpg";
-      document.getElementById("myTitle").innerHTML = "Masjid";
-    }
-    else if (text=='Bas') {
-      document.getElementById("myImg").src="/ofrs/img/bas.jpg";
-      document.getElementById("myTitle").innerHTML = "Bas";
-    }
-
-
+	    }
+	    for(i=1;i<2;i++)
+	    {
+	    var row = table.insertRow(i);
+	    var b = row.insertCell(0);
+	    b.innerHTML = date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear();
+	    //date.setDate(date.getDate() + 1);
+	      for(a=1;a<8;a++)
+	      {
+	        var r = row.insertCell(a);
+	        r.innerHTML="<form method='get' action='bookingdetail.php'><input type='hidden' name='name' value='<?php echo$_POST['name']?>''><input type='hidden' name='time' value="+time.getHours()+".00-"+(time.getHours()+2)+".00><input type='hidden' name='datefrom' value="+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()+"><button name='dateto' class='centerimg' value="+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()+"><img width='30' height='30' class='centerimg' src='/ofrs/img/plus.png'></button></form>";
+	        time.setHours(time.getHours()+2);
+	      }
+	    }
+		}
+		else if(type=="day") {
+			var time1=  new Date();
+			time1.setHours(0);
+			var table = document.getElementById("myTable");
+	    var date = new Date(document.getElementById("myDate").value);
+			var day = date.getDate();
+			var month = date.getMonth()+1;
+			var year = date.getFullYear();
+			if (month < 10) month = "0" + month;
+			if (day < 10) day = "0" + day;
+			var fullDate = year + "-" + month + "-" + day;
+			document.getElementById("myTableDay").innerHTML ="<tr><td><input type='hidden' name='name' value='<?php echo$_POST['name']?>'><input type='hidden' name='time' value="+time1.getHours()+".00-"+(time1.getHours()+23)+".00>Booking Date From:<input name='datefrom' type='date' value ="+fullDate+" required></td><td>Booking Date To:</td><td><input type='date' name='dateto' min="+fullDate+" required></td><td><button name='reserve'value='reservation'>Create Reservation</button></td></tr>";
+			//document.getElementById("theDate").value = fullDate;
+		}
   }
   </script>
 

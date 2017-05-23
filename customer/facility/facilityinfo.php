@@ -1,5 +1,15 @@
 <?php
 	require_once('../connect.php');
+	session_start();
+
+	if(!isset($_SESSION['login']))
+	{
+		echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/ofrs/login.php';</script>";
+	}
+
+	require_once('../connect.php');
+	require_once('../customerconfig.php');
+	require_once('../customerstatus.php');
 	if(isset($_GET['facility'])){
 	}
 
@@ -36,13 +46,24 @@
 </div>
 
 <div id="navigation">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Facilities</a></li>
-<li><a href="login.php">Login</a></li>
-<li><a href="contact.html">Contact us</a></li>
-</ul>
+	<ul>
+	<li><a href="../index.php">Home</a></li>
+	<li><a href="#">About Us</a></li>
+	<li class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Facilities</a>
+		<div class="dropdown-content">
+			<a href="../facility/menu.php">New Reservation</a>
+			<a href="../reservation/status.php">Reservation Status</a>
+		</div>
+	<li><a href="contact.html">Contact us</a></li>
+	<li style="float:right" class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
+		<div class="dropdown-content">
+			<a href="#">Account Details </a>
+			<a href="../logout.php">Logout </a>
+		</div>
+	</li>
+	</ul>
 </div>
 <div id="mr">
 	<tr>

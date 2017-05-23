@@ -15,7 +15,7 @@ if(mysqli_query($conn,$sql_delete)){
   echo '<script language="javascript">';
   echo 'alert("Record Succesfully Deleted")';
   echo '</script>';
-  echo "<script language=javascript>window.location='../reservation/status.php';</script>";
+  echo "<script language=javascript>window.location='../customer/reservation/status.php';</script>";
 }
 else {
   echo "Error Terminating Reservation";

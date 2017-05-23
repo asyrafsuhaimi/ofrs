@@ -1,6 +1,7 @@
 <?php
   $facilityname = "";
-  $bookingdate = "";
+  $bookingdatefrom = "";
+  $bookingdateto = "";
   $bookingtime = "";
   $status = "";
   $reservation="";

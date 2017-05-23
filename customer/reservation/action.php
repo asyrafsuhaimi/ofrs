@@ -9,16 +9,27 @@ include('../connect.php');
 include('../customerconfig.php');
 
 $facilityname = $_POST['facilityname'];
-$bookingdate = $_POST['bookingdate'];
+$bookingdatefrom = $_POST['bookingdatefrom'];
+$bookingdateto = $_POST['bookingdateto'];
 $bookingtime = $_POST['bookingtime'];
 $status = "Pending Approval";
+$startdate = $_POST['bookingdatefrom'];
+$enddate = $_POST['bookingdateto'];
+$sql_reservation="INSERT INTO reservation(customerid, facilityname, bookingdatefrom,bookingdateto, bookingtime, status) VALUES ('$customerid','$facilityname','$bookingdatefrom','$bookingdateto','$bookingtime','$status')";
 
-$sql_reservation="INSERT INTO reservation(customerid, facilityname, bookingdate, bookingtime, status) VALUES ('$customerid','$facilityname','$bookingdate','$bookingtime','$status')";
+while (strtotime($startdate) <= strtotime($enddate)) {
+	$sql_occupancy="INSERT INTO occupancy(facilityname,customerid,bookingdate,bookingtime) VALUES('$facilityname','$customerid','$startdate','$bookingtime')";
+	if(!mysqli_query($conn,$sql_occupancy)){
+		echo "error";
+	}
+	$startdate = date ("Y-m-d", strtotime("+1 day", strtotime($startdate)));
+	# code...
+}
 
 if (mysqli_query($conn,$sql_reservation)){
 	echo '<script language="javascript">';
   echo 'alert("Facility Reserved")';
  	echo '</script>';
-	echo "<script language=javascript>window.location='/ofrs/index.php';</script>";
+	echo "<script language=javascript>window.location='/ofrs/customer/index.php';</script>";
 }
 ?>

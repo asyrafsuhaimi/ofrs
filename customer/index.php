@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['login']))
 {
-	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/Asyraf/uvrs/Userlogin.php';</script>";
+	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/ofrs/login.php';</script>";
 }
  ?>
 <html>
@@ -23,11 +23,22 @@ if(!isset($_SESSION['login']))
 
 <div id="navigation">
 <ul>
-<li><a href="index.php">Home</a></li>
+<li><a href="../customer/index.php">Home</a></li>
 <li><a href="#">About Us</a></li>
-<li><a href="facility/menu.php">Facilities</a></li>
+<li class="dropdown">
+	<a href="javascript:void(0)" class="dropbtn">Facilities</a>
+	<div class="dropdown-content">
+		<a href="../customer/facility/menu.php">New Reservation</a>
+		<a href="../customer/reservation/status.php">Reservation Status</a>
+	</div>
 <li><a href="contact.html">Contact us</a></li>
-<li style="float:right"><a href=#>Logged as.."<?php echo $_SESSION['login']?>"</a></li>
+<li style="float:right" class="dropdown">
+	<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
+	<div class="dropdown-content">
+		<a href="#">Account Details </a>
+		<a href="../customer/logout.php">Logout </a>
+	</div>
+</li>
 </ul>
 </div>
 <div id="mr">

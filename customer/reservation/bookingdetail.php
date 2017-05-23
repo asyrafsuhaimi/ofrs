@@ -38,13 +38,24 @@ if(mysqli_num_rows($result)>0){
     </div>
 
     <div id="navigation">
-      <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Facilities</a></li>
-        <li><a href="login.php">Login</a></li>
-        <li><a href="#">Contact us</a></li>
-      </ul>
+			<ul>
+			<li><a href="../index.php">Home</a></li>
+			<li><a href="#">About Us</a></li>
+			<li class="dropdown">
+				<a href="javascript:void(0)" class="dropbtn">Facilities</a>
+				<div class="dropdown-content">
+					<a href="../facility/menu.php">New Reservation</a>
+					<a href="../reservation/status.php">Reservation Status</a>
+				</div>
+			<li><a href="contact.html">Contact us</a></li>
+			<li style="float:right" class="dropdown">
+				<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
+				<div class="dropdown-content">
+					<a href="#">Account Details </a>
+					<a href="../logout.php">Logout </a>
+				</div>
+			</li>
+			</ul>
     </div>
     <div id="mr">
 	     <tr>
@@ -76,7 +87,10 @@ if(mysqli_num_rows($result)>0){
             <td>Facility</td><td><input type="text" name="facilityname" value="<?php echo$_GET['name']?>"></td>
           </tr>
           <tr>
-            <td>Booking Date</td><td><input type="text" name="bookingdate" value="<?php echo$_GET['date'] ?>"></td>
+            <td>Booking Date From</td><td><input type="date" name="bookingdatefrom" value="<?php echo$_GET['datefrom'] ?>"></td>
+          </tr>
+					<tr>
+            <td>Booking Date To</td><td><input type="date" name="bookingdateto" value="<?php echo$_GET['dateto'] ?>"></td>
           </tr>
           <tr>
             <td>Booking Time</td><td><input type="text" name="bookingtime" value="<?php echo$_GET['time'] ?>"></td>
