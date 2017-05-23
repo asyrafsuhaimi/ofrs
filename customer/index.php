@@ -31,11 +31,12 @@ if(!isset($_SESSION['login']))
 		<a href="../customer/facility/menu.php">New Reservation</a>
 		<a href="../customer/reservation/status.php">Reservation Status</a>
 	</div>
-<li><a href="contact.html">Contact us</a></li>
+</li>
+<li><a href="../customer/contact.php">Contact us</a></li>
 <li style="float:right" class="dropdown">
 	<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
 	<div class="dropdown-content">
-		<a href="#">Account Details </a>
+		<a href="../customer/accountdetail.php">Account Details </a>
 		<a href="../customer/logout.php">Logout </a>
 	</div>
 </li>

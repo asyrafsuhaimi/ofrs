@@ -1,9 +1,10 @@
 <?php
-  $facilityname = "";
-  $bookingdate = "";
-  $bookingtime = "";
-  $status = "";
-  $reservation="";
+$facilityname = "";
+$bookingdatefrom = "";
+$bookingdateto = "";
+$bookingtime = "";
+$status = "";
+$reservation="";
 
   $sql_status = "SELECT * FROM `reservation` WHERE customerid like '".$customerid."'and status like 'Pending Approval'";
   $sql_status1 = "SELECT * FROM `reservation` WHERE customerid like '".$customerid."'and status like 'Approve'";

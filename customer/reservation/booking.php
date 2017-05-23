@@ -34,11 +34,11 @@ require_once('../customerconfig.php');
 					<a href="../facility/menu.php">New Reservation</a>
 					<a href="../reservation/status.php">Reservation Status</a>
 				</div>
-			<li><a href="contact.html">Contact us</a></li>
+			<li><a href="../contact.php">Contact us</a></li>
 			<li style="float:right" class="dropdown">
 				<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
 				<div class="dropdown-content">
-					<a href="#">Account Details </a>
+					<a href="../accountdetail.php">Account Details </a>
 					<a href="../logout.php">Logout </a>
 				</div>
 			</li>
@@ -114,11 +114,14 @@ require_once('../customerconfig.php');
 
   <script>
   function myFunction() {
+		document.getElementById("myTableDay").innerHTML ="";
+		document.getElementById("myTable").innerHTML ="";
 		var e = document.getElementById("bookingType");
 		var type = e.options[e.selectedIndex].value;
 
 		if(type=="hour")
 		{
+
 			document.getElementById("myTable").innerHTML = "<tr><th>Time:<?php for($j = 8; $j<22; $j+=2) { echo'<th>'.$j.'.00-'.($j+2).'.00</th>';}  ?> </th></tr>";
 			var img = document.createElement('img');
 	    img.src = "/ofrs/img/plus.png";
@@ -137,11 +140,17 @@ require_once('../customerconfig.php');
 	    var row = table.insertRow(i);
 	    var b = row.insertCell(0);
 	    b.innerHTML = date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear();
+			var day = date.getDate();
+			var month = date.getMonth()+1;
+			var year = date.getFullYear();
+			if (month < 10) month = "0" + month;
+			if (day < 10) day = "0" + day;
+			var fullDate = year + "-" + month + "-" + day;
 	    //date.setDate(date.getDate() + 1);
 	      for(a=1;a<8;a++)
 	      {
 	        var r = row.insertCell(a);
-	        r.innerHTML="<form method='get' action='bookingdetail.php'><input type='hidden' name='name' value='<?php echo$_POST['name']?>''><input type='hidden' name='time' value="+time.getHours()+".00-"+(time.getHours()+2)+".00><input type='hidden' name='datefrom' value="+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()+"><button name='dateto' class='centerimg' value="+date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear()+"><img width='30' height='30' class='centerimg' src='/ofrs/img/plus.png'></button></form>";
+	        r.innerHTML="<form method='get' action='bookingdetail.php'><input type='hidden' name='name' value='<?php echo$_POST['name']?>''><input type='hidden' name='time' value="+time.getHours()+".00-"+(time.getHours()+2)+".00><input type='hidden' name='datefrom' value="+fullDate+"><button name='dateto' class='centerimg' value="+fullDate+"><img width='30' height='30' class='centerimg' src='/ofrs/img/plus.png'></button></form>";
 	        time.setHours(time.getHours()+2);
 	      }
 	    }

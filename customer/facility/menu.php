@@ -32,11 +32,11 @@ if(!isset($_SESSION['login']))
 			<a href="../facility/menu.php">New Reservation</a>
 			<a href="../reservation/status.php">Reservation Status</a>
 		</div>
-	<li><a href="contact.html">Contact us</a></li>
+	<li><a href="../contact.php">Contact us</a></li>
 	<li style="float:right" class="dropdown">
 		<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
 		<div class="dropdown-content">
-			<a href="#">Account Details </a>
+			<a href="../accountdetail.php">Account Details </a>
 			<a href="../logout.php">Logout </a>
 		</div>
 	</li>
@@ -64,7 +64,7 @@ if(!isset($_SESSION['login']))
       <ul>
         <li><a href="facilityinfo.php?facility=Main Hall">Main Hall</a></li>
         <li><a href="facilityinfo.php?facility=Banquet Hall">Banquet Hall</a></li>
-        <li><a href="facilityinfo.php?facility=VVIP Room">VVIP Room</a></li>
+        <li><a href="facilityinfo.php?facility=VVIP Banquet Room">VVIP Banquet Room</a></li>
       </ul>
     </td>
   </tr>
@@ -82,21 +82,6 @@ if(!isset($_SESSION['login']))
         <li><a href="facilityinfo.php?facility=Lestari">Kolej Kediaman Lestari</a></li>
         <li><a href="facilityinfo.php?facility=Aljazari">Kolej Kediaman Aljazari</a></li>
         <li><a href="facilityinfo.php?facility=Bunga Raya">Kolej Kediaman Bunga Raya</a></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div class="overlay-container">
-      <img src="/ofrs/img/bas.jpg" id="myImg" alt="Bas UTeM" width="450" height="200">
-      <div class = "overlay2">
-        <div class="text">Transportations</div>
-      </div>
-    </div>
-    </td>
-    <td>
-      <ul>
-        <li><a href="facilityinfo.php?facility=Bus">Bus</a></li>
       </ul>
     </td>
   </tr>

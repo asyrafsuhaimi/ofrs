@@ -55,11 +55,11 @@
 			<a href="../facility/menu.php">New Reservation</a>
 			<a href="../reservation/status.php">Reservation Status</a>
 		</div>
-	<li><a href="contact.html">Contact us</a></li>
+	<li><a href="../contact.php">Contact us</a></li>
 	<li style="float:right" class="dropdown">
 		<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
 		<div class="dropdown-content">
-			<a href="#">Account Details </a>
+			<a href="../accountdetail.php">Account Details </a>
 			<a href="../logout.php">Logout </a>
 		</div>
 	</li>
@@ -80,8 +80,11 @@
 				<option value="" disabled selected>Choose Other Facility</option>
         <option value="Bunga Raya">Bunga Raya Hostel</option>
         <option value-"Main Hall">Main Hall</option>
-        <option>Banquet Hall</option>
-        <option>VVIP Room</option>
+        <option value="Banquet Hall">Banquet Hall</option>
+        <option value="VVIP Banquet Room">VVIP Room</option>
+				<option value="Aljazari">AlJazari Hostel</option>
+				<option value="Lestari">Lestari Hostel</option>
+				<option value="Main Praying Hall">Main Praying Hall</option>
       </select>
 			<input type="submit" name="submit" class="btn btn1">
 		</form>

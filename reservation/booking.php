@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['login']))
 {
-	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/Asyraf/uvrs/Userlogin.php';</script>";
+	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/ofrs/login.php';</script>";
 }
 require_once('../connect.php');
 require_once('../customerconfig.php');

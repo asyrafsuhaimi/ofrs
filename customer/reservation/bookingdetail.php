@@ -47,11 +47,11 @@ if(mysqli_num_rows($result)>0){
 					<a href="../facility/menu.php">New Reservation</a>
 					<a href="../reservation/status.php">Reservation Status</a>
 				</div>
-			<li><a href="contact.html">Contact us</a></li>
+			<li><a href="../contact.php">Contact us</a></li>
 			<li style="float:right" class="dropdown">
 				<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
 				<div class="dropdown-content">
-					<a href="#">Account Details </a>
+					<a href="../accountdetail.php">Account Details </a>
 					<a href="../logout.php">Logout </a>
 				</div>
 			</li>
@@ -100,7 +100,7 @@ if(mysqli_num_rows($result)>0){
         <div class="btncenter">
             <button class="btn btn1" onclick = "return confirm('Are You Sure You Want To Confirm The Reservation?')">Confirm Reservation</button>
       </form>
-			<form action="/ofrs/facility/menu.php">
+			<form action="/ofrs/customer/facility/menu.php">
 						<button class="btn btn2" onclick = "return confirm('Are You Sure You Want To Cancel The Reservation?')">Cancel Reservations</button>
 			</form>
         </div>
@@ -110,7 +110,7 @@ if(mysqli_num_rows($result)>0){
 
 <!--  -->
 
-  <div id="footer">
+  <div id="footer" style="margin-top:700px">
     <CENTER>Copyright © UTeM, 2017</CENTER>
   </div>
 

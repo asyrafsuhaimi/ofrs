@@ -1,0 +1,46 @@
+table {
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  width: 25%;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+th, td {
+  text-align: left;
+  padding: 10px; }
+
+th {
+  background-color: #4CAF50;
+  color: white; }
+
+td {
+  background-color: white; }
+
+.btn {
+  background: #34d9aa;
+  background-image: -webkit-linear-gradient(top, #34d9aa, #14db67);
+  background-image: -moz-linear-gradient(top, #34d9aa, #14db67);
+  background-image: -ms-linear-gradient(top, #34d9aa, #14db67);
+  background-image: -o-linear-gradient(top, #34d9aa, #14db67);
+  background-image: linear-gradient(to bottom, #34d9aa, #14db67);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 7px 11px 8px 9px;
+  text-decoration: none; }
+
+.btn:hover {
+  background: #3ce680;
+  background-image: -webkit-linear-gradient(top, #3ce680, #36eba9);
+  background-image: -moz-linear-gradient(top, #3ce680, #36eba9);
+  background-image: -ms-linear-gradient(top, #3ce680, #36eba9);
+  background-image: -o-linear-gradient(top, #3ce680, #36eba9);
+  background-image: linear-gradient(to bottom, #3ce680, #36eba9);
+  text-decoration: none; }
+
+/*# sourceMappingURL=accountdetail.css.map */

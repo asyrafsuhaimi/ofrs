@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['login']))
 {
-	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/Asyraf/uvrs/Userlogin.php';</script>";
+	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/ofrs/login.php';</script>";
 }
  ?>
 <html>
@@ -22,13 +22,32 @@ if(!isset($_SESSION['login']))
 </div>
 
 <div id="navigation">
-<ul>
-<li><a href="index.php">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="../ofrs/facility/menu.php">Facilities</a></li>
-<li><a href="contact.html">Contact us</a></li>
-<li style="float:right"><a href="login.php">Logged as.."<?php echo $_SESSION['login']?>"</a></li>
-</ul>
+	<ul>
+	<li><a href="../customer/index.php">Home</a></li>
+	<li class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Facilities</a>
+		<div class="dropdown-content">
+			<a href="../admin/facility/menu.php">Edit Facilities</a>
+			<a href="../admin/reservation/customerbooking.php">Customer Reservation</a>
+		</div>
+	</li>
+	<li class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Accounts</a>
+		<div class="dropdown-content">
+			<a href="../admin/facility/menu.php">Customer Accounts</a>
+			<a href="../admin/reservation/status.php">Add Admin Accounts</a>
+			<a href="../admin/reservation/status.php">Edit Admin Accounts</a>
+		</div>
+	</li>
+	<li style="float:right" class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
+		<div class="dropdown-content">
+			<a href="../admin/accountdetail.php">Account Details </a>
+			<a href="../admin/logout.php">Logout </a>
+		</div>
+	</li>
+	<li><a href="#">Report</a></li>
+	</ul>
 </div>
 <div id="mr">
 	<tr>
