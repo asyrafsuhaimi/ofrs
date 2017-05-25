@@ -1,11 +1,3 @@
-<?php
-session_start();
-
-if(!isset($_SESSION['login']))
-{
-	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/ofrs/login.php';</script>";
-}
- ?>
 <html>
 <head>
 
@@ -23,12 +15,12 @@ if(!isset($_SESSION['login']))
 </div>
 
 <div id="navigation">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Facilities</a></li>
-<li><a href="contact.html">Contact us</a></li>
-</ul>
+	<ul>
+	<li><a href="../index.php">Home</a></li>
+	<li><a href="../facility/menu.php">Facilities</a></li>
+	<li><a href="../login.php">Login</a></li>
+	<li><a href="../contact.html">Contact us</a></li>
+	</ul>
 </div>
 <div id="mr">
 	<tr>
@@ -39,6 +31,7 @@ if(!isset($_SESSION['login']))
 </div>
 
 <table class = "center">
+	<tr><td colspan="2"><h2 style="text-align:center">Facility</h2></td></tr>
   <tr>
     <td>
       <div class="overlay-container">
@@ -70,21 +63,6 @@ if(!isset($_SESSION['login']))
         <li><a href="facilityinfo.php?facility=Lestari">Kolej Kediaman Lestari</a></li>
         <li><a href="facilityinfo.php?facility=Aljazari">Kolej Kediaman Aljazari</a></li>
         <li><a href="facilityinfo.php?facility=Bunga Raya">Kolej Kediaman Bunga Raya</a></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div class="overlay-container">
-      <img src="../img/bas.jpg" id="myImg" alt="Bas UTeM" width="450" height="200">
-      <div class = "overlay2">
-        <div class="text">Transportations</div>
-      </div>
-    </div>
-    </td>
-    <td>
-      <ul>
-        <li><a href="facilityinfo.php?facility=Bus">Bus</a></li>
       </ul>
     </td>
   </tr>

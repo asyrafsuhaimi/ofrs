@@ -10,8 +10,8 @@ if(!isset($_SESSION['login']))
 <head>
 
 <title>Online Facilities Reservation System</title>
-<link rel="stylesheet" href="/ofrs/css/indexstyle.css"type="text/css">
-<link rel="stylesheet" href="/ofrs/css/menu.css"type="text/css">
+<link rel="stylesheet"href="/ofrs/css/indexstyle.css"type="text/css">
+<link rel="stylesheet"href="/ofrs/css/accountdetail.css"type="text/css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@ if(!isset($_SESSION['login']))
 <div id="wrapper">
 <div id="header">
 <img src="/ofrs/img/title.png" alt="img/Logo UTeM" width="500" >
-<img src="/ofrs/img/utem.png" alt="img/Logo UTeM" width="200" height="120"/>
+<img src="/ofrs/img/utem.png" alt="img/Logo UTeM" width="200" height="100"/>
 </div>
 
 <div id="navigation">
@@ -28,7 +28,6 @@ if(!isset($_SESSION['login']))
 	<li class="dropdown">
 		<a href="javascript:void(0)" class="dropbtn">Facilities</a>
 		<div class="dropdown-content">
-			<a href="/ofrs/admin/facility/menu.php">Edit Facilities</a>
 			<a href="/ofrs/admin/reservation/customerbooking.php">Customer Reservation</a>
 		</div>
 	</li>
@@ -57,67 +56,45 @@ if(!isset($_SESSION['login']))
             </td>
 	</tr>
 </div>
-
-<table class = "center">
-<tr><td colspan="2"><h2 style="text-align:center">Facility</h2></td></tr>
-	<tr>
+<div id="content-container">
+<form method="post" action="actionregister.php">
+<table>
+  <tr>
+    <th colspan="2" style="text-align:center;" >Register Account</th>
+  </tr>
+  <tr>
+    <td>Staff ID</td><td><input type="text" name="staffid" required></td>
+  </tr>
+  <tr>
+    <td>Name</td><td><input type="text" name="name" required></td>
+  </tr>
+  <tr>
+    <td>Username</td><td><input type="text" name="uname" required></td>
+  </tr>
+  <tr>
+    <td>Password</td><td><input type="text" name="pword"required></td>
+  </tr>
+  <tr>
+    <td>Type Of User</td>
     <td>
-      <div class="overlay-container">
-      <img src="/ofrs/img/dewan.jpg" id="myImg" alt="dewan UTeM" width="450" height="200">
-      <div class = "overlay">
-        <div class="text">Halls And Rooms</div>
-      </div>
-    </div>
-    </td>
-    <td>
-      <ul>
-        <li><a href="facilityinfo.php?facility=Main Hall">Main Hall</a></li>
-        <li><a href="facilityinfo.php?facility=Banquet Hall">Banquet Hall</a></li>
-        <li><a href="facilityinfo.php?facility=VVIP Room">VVIP Room</a></li>
-      </ul>
+      <select name="typeofuser">
+        <option value="Admin">Admin</option>
+        <option value="Staff">Staff</option>
+      </select>
     </td>
   </tr>
   <tr>
-    <td>
-      <div class="overlay-container">
-      <img src="/ofrs/img/asrama.jpg" id="myImg" alt="dewan UTeM" width="450" height="200">
-      <div class = "overlay1">
-        <div class="text">Acommodations</div>
-      </div>
-    </div>
-    </td>
-    <td>
-      <ul>
-        <li><a href="facilityinfo.php?facility=Lestari">Kolej Kediaman Lestari</a></li>
-        <li><a href="facilityinfo.php?facility=Aljazari">Kolej Kediaman Aljazari</a></li>
-        <li><a href="facilityinfo.php?facility=Bunga Raya">Kolej Kediaman Bunga Raya</a></li>
-      </ul>
-    </td>
+    <td colspan="2" style="text-align:center"><button type="submit">Register</button></td>
   </tr>
-  <tr>
-    <td>
-      <div class="overlay-container">
-      <img src="/ofrs/img/masjid.jpg" id="myImg" alt="Masjid UTeM" width="450" height="200">
-      <div class = "overlay3">
-        <div class="text">Mosque</div>
-      </div>
-    </div>
-    </td>
-    <td>
-      <ul>
-        <li><a href="facilityinfo.php?facility=Main Praying Hall">Main Praying Hall</a></li>
-      </ul>
-    </td>
-  </tr>
-</table>
-<!--  -->
-</br>
-</br>
-</br>
-</br>
-</br>
+  <table>
+</div>
+</form>
 
-<div id="footer">
+<!--
+add comment to test tortoiseSVN
+ -->
+
+<div id="footer" style="margin-top:100px">
 <CENTER>Copyright &copy UTeM, 2017</CENTER>
 </div>
 

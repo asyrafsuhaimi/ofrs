@@ -7,6 +7,8 @@ if(!isset($_SESSION['login']))
 }
 require_once('../connect.php');
 require_once('../customerconfig.php');
+
+
  ?>
 <html>
 <head>
@@ -27,7 +29,6 @@ require_once('../customerconfig.php');
     <div id="navigation">
 			<ul>
 			<li><a href="../index.php">Home</a></li>
-			<li><a href="#">About Us</a></li>
 			<li class="dropdown">
 				<a href="javascript:void(0)" class="dropbtn">Facilities</a>
 				<div class="dropdown-content">
@@ -63,7 +64,7 @@ require_once('../customerconfig.php');
         </div>
         <div class="date">
           <table class="options">
-          <form>
+          <form action=""method="post">
 						<tr>
 							<td>Type Of Booking</td>
 							<td>
@@ -91,11 +92,9 @@ require_once('../customerconfig.php');
           </table>
         </div>
         <table id="myTable">
-
         </table>
 				<form method='get' action='bookingdetail.php'>
 					<table id='myTableDay'>
-
 					</table>
 				</form>
         </div>

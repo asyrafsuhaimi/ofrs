@@ -25,24 +25,24 @@ require_once('../customerconfig.php');
 </div>
 
 <div id="navigation">
-<ul>
-<li><a href="../customer/index.php">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li class="dropdown">
-	<a href="javascript:void(0)" class="dropbtn">Facilities</a>
-	<div class="dropdown-content">
-		<a href="../customer/facility/menu.php">New Reservation</a>
-		<a href="../customer/reservation/status.php">Reservation Status</a>
-	</div>
-<li><a href="../customer/contact.php">Contact us</a></li>
-<li style="float:right" class="dropdown">
-	<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
-	<div class="dropdown-content">
-		<a href="../customer/accountdetail.php">Account Details </a>
-		<a href="../customer/logout.php">Logout </a>
-	</div>
-</li>
-</ul>
+	<ul>
+	<li><a href="../customer/index.php">Home</a></li>
+	<li class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Facilities</a>
+		<div class="dropdown-content">
+			<a href="../customer/facility/menu.php">New Reservation</a>
+			<a href="../customer/reservation/status.php">Reservation Status</a>
+		</div>
+	</li>
+	<li><a href="../customer/contact.php">Contact us</a></li>
+	<li style="float:right" class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
+		<div class="dropdown-content">
+			<a href="../customer/accountdetail.php">Account Details </a>
+			<a href="../customer/logout.php">Logout </a>
+		</div>
+	</li>
+	</ul>
 </div>
 <div id="mr">
 	<tr>

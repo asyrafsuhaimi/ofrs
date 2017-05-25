@@ -40,7 +40,6 @@ if(mysqli_num_rows($result)>0){
     <div id="navigation">
 			<ul>
 			<li><a href="../index.php">Home</a></li>
-			<li><a href="#">About Us</a></li>
 			<li class="dropdown">
 				<a href="javascript:void(0)" class="dropbtn">Facilities</a>
 				<div class="dropdown-content">

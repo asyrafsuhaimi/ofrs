@@ -36,13 +36,12 @@
 </div>
 
 <div id="navigation">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Facilities</a></li>
-<li><a href="login.php">Login</a></li>
-<li><a href="contact.html">Contact us</a></li>
-</ul>
+	<ul>
+	<li><a href="../index.php">Home</a></li>
+	<li><a href="../facility/menu.php">Facilities</a></li>
+	<li><a href="../login.php">Login</a></li>
+	<li><a href="../contact.html">Contact us</a></li>
+	</ul>
 </div>
 <div id="mr">
 	<tr>
@@ -56,11 +55,13 @@
     <td>
 			<form method="get" action="">
       <select name="facility">
-				<option value="" disabled selected>Choose Other Facility</option>
-        <option value="Bunga Raya">Bunga Raya Hostel</option>
+				<option value="Bunga Raya">Bunga Raya Hostel</option>
         <option value-"Main Hall">Main Hall</option>
-        <option>Banquet Hall</option>
-        <option>VVIP Room</option>
+        <option value="Banquet Hall">Banquet Hall</option>
+        <option value="VVIP Banquet Room">VVIP Room</option>
+				<option value="Aljazari">AlJazari Hostel</option>
+				<option value="Lestari">Lestari Hostel</option>
+				<option value="Main Praying Hall">Main Praying Hall</option>
       </select>
 			<input type="submit" name="submit" class="btn btn1">
 		</form>
@@ -80,9 +81,9 @@
 	<tr>
 		<td colspan="2">
 			<br/>
-			<form method = "post" action="../reservation/booking.php">
+			<form  action="../facility/menu.php">
 				<input type="hidden" name="name" value="<?php echo$name?>">
-				<button class="btn btn1 centerbtn"name="facility" value="<?php echo$facilityimage;?>">Make A Reservation</button>
+				<button class="btn btn1 centerbtn"name="facility" value="<?php echo$facilityimage;?>">Previous Menu</button>
 			</form>
 		<td>
 	</tr>

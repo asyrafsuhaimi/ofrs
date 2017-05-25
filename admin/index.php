@@ -23,20 +23,19 @@ if(!isset($_SESSION['login']))
 
 <div id="navigation">
 	<ul>
-	<li><a href="../customer/index.php">Home</a></li>
+	<li><a href="../admin/index.php">Home</a></li>
 	<li class="dropdown">
 		<a href="javascript:void(0)" class="dropbtn">Facilities</a>
 		<div class="dropdown-content">
-			<a href="../admin/facility/menu.php">Edit Facilities</a>
 			<a href="../admin/reservation/customerbooking.php">Customer Reservation</a>
 		</div>
 	</li>
 	<li class="dropdown">
 		<a href="javascript:void(0)" class="dropbtn">Accounts</a>
 		<div class="dropdown-content">
-			<a href="../admin/facility/menu.php">Customer Accounts</a>
-			<a href="../admin/reservation/status.php">Add Admin Accounts</a>
-			<a href="../admin/reservation/status.php">Edit Admin Accounts</a>
+			<a href="../admin/account/customeraccount.php">Customer Accounts</a>
+			<a href="../admin/account/registeradmin.php">Add Admin Accounts</a>
+			<a href="../admin/account/adminaccount.php">Admin Accounts</a>
 		</div>
 	</li>
 	<li style="float:right" class="dropdown">
@@ -46,7 +45,7 @@ if(!isset($_SESSION['login']))
 			<a href="../admin/logout.php">Logout </a>
 		</div>
 	</li>
-	<li><a href="#">Report</a></li>
+	<li><a href="../admin/report.php">Report</a></li>
 	</ul>
 </div>
 <div id="mr">

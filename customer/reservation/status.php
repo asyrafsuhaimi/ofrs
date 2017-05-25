@@ -16,6 +16,7 @@ require_once('../customerstatus.php');
 <title>Online Facilities Reservation System</title>
 <link rel="stylesheet"href="/ofrs/css/indexstyle.css"type="text/css">
 <link rel="stylesheet"href="/ofrs/css/status.css"type="text/css">
+
 </head>
 
 <body>
@@ -29,7 +30,6 @@ require_once('../customerstatus.php');
 <div id="navigation">
 	<ul>
 	<li><a href="../index.php">Home</a></li>
-	<li><a href="#">About Us</a></li>
 	<li class="dropdown">
 		<a href="javascript:void(0)" class="dropbtn">Facilities</a>
 		<div class="dropdown-content">
@@ -54,12 +54,39 @@ require_once('../customerstatus.php');
 	</tr>
 </div>
 <div id="content-container">
+	<h3 class="backdrop">My Reservation</h3>
+	<div class="inputcenter">
+		<input type="text" placeholder="Filter for Facility Name.." id="myInput" onkeyup="myFunction()">
+	</div>
 <div id="main">
-  <h3>My Reservation</h3>
-  <table class="center">
+  <table class="center" id="myTable">
 
 
     <?php
+
+		echo "
+	      <script type=\"text/javascript\">
+	      function myFunction() {
+	        var input, filter, table, tr, td, i;
+	        input = document.getElementById('myInput');
+	        filter = input.value.toUpperCase();
+	        table = document.getElementById('myTable');
+	        tr = table.getElementsByTagName('tr');
+	        for (i = 0; i < tr.length; i++) {
+	          td = tr[i].getElementsByTagName('td')[0];
+	          if (td) {
+	            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+	              tr[i].style.display = '';
+	            } else {
+	              tr[i].style.display = 'none';
+	            }
+	          }
+	        }
+	      }
+	      </script>
+	  ";
+
+
     echo "<tr><th>Facility Name</th><th>Booking Date From</th><th>Booking Date To</th><th>Booking Time</th><th>Status</th><th>Action</th></tr>";
     if(mysqli_num_rows($result_status)>0)
     {
@@ -94,7 +121,7 @@ require_once('../customerstatus.php');
 			 $bookingtime = $status_result2['bookingtime'];
 			 $status = $status_result2['status'];
 			 $reservationid = $status_result2['reservationid'];
-			 echo "<tr><td>".$facilityname."</td><td>".$bookingdatefrom."</td><td>".$bookingdateto."</td><td>".$bookingtime."</td><td>".$status."</td><td><form method='post' action='../delete.php'><button type='submit' value='".$reservationid."' name='delete' onclick=\"javascript: return confirm('Please confirm deletion');\">Cancel Reservation</button></form></td></tr>";
+			 echo "<tr><td>".$facilityname."</td><td>".$bookingdatefrom."</td><td>".$bookingdateto."</td><td>".$bookingtime."</td><td>".$status."</td><td><form method='post' action='../delete.php'><button type='submit' value='".$reservationid."' name='delete' onclick=\"javascript: return confirm('Please confirm deletion');\">Delete Reservation</button></form></td></tr>";
 
 		 }
 	 }

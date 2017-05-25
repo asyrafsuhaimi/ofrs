@@ -23,7 +23,6 @@ while (strtotime($startdate) <= strtotime($enddate)) {
 		echo "error";
 	}
 	$startdate = date ("Y-m-d", strtotime("+1 day", strtotime($startdate)));
-	# code...
 }
 
 if (mysqli_query($conn,$sql_reservation)){

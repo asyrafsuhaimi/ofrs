@@ -1,5 +1,11 @@
 <?php
 	require_once('../connect.php');
+	session_start();
+
+	if(!isset($_SESSION['login']))
+	{
+		echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/ofrs/login.php';</script>";
+	}
 	if(isset($_GET['facility'])){
 	}
 
@@ -23,26 +29,45 @@
 <head>
 
 <title>Online Facilities Reservation System</title>
-<link rel="stylesheet" href="../css/indexstyle.css"type="text/css">
-<link rel="stylesheet" href="../css/facilityinfo.css"type="text/css">
+<link rel="stylesheet" href="/ofrs/css/indexstyle.css"type="text/css">
+<link rel="stylesheet" href="/ofrs/css/facilityinfo.css"type="text/css">
 </head>
 
 <body>
 
 <div id="wrapper">
 <div id="header">
-<img src="../img/title.png" alt="img/Logo UTeM" width="500" >
-<img src="../img/utem.png" alt="img/Logo UTeM" width="200" height="120"/>
+<img src="/ofrs/img/title.png" alt="img/Logo UTeM" width="500" >
+<img src="/ofrs/img/utem.png" alt="img/Logo UTeM" width="200" height="120"/>
 </div>
 
 <div id="navigation">
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Facilities</a></li>
-<li><a href="login.php">Login</a></li>
-<li><a href="contact.html">Contact us</a></li>
-</ul>
+	<ul>
+	<li><a href="/ofrs/admin/index.php">Home</a></li>
+	<li class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Facilities</a>
+		<div class="dropdown-content">
+			<a href="/ofrs/admin/facility/menu.php">Edit Facilities</a>
+			<a href="/ofrs/admin/reservation/customerbooking.php">Customer Reservation</a>
+		</div>
+	</li>
+	<li class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Accounts</a>
+		<div class="dropdown-content">
+			<a href="/ofrs/admin/account/customeraccount.php">Customer Accounts</a>
+			<a href="/ofrs/admin/account/registeradmin.php">Add Admin Accounts</a>
+			<a href="/ofrs/admin/account/adminaccount.php">Admin Accounts</a>
+		</div>
+	</li>
+	<li style="float:right" class="dropdown">
+		<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
+		<div class="dropdown-content">
+			<a href="/ofrs/admin/accountdetail.php">Account Details </a>
+			<a href="../logout.php">Logout </a>
+		</div>
+	</li>
+	<li><a href="../report.php">Report</a></li>
+	</ul>
 </div>
 <div id="mr">
 	<tr>
@@ -80,7 +105,7 @@
 	<tr>
 		<td colspan="2">
 			<br/>
-			<form method = "post" action="../reservation/booking.php">
+			<form method = "post" action="/ofrs/reservation/booking.php">
 				<input type="hidden" name="name" value="<?php echo$name?>">
 				<button class="btn btn1 centerbtn"name="facility" value="<?php echo$facilityimage;?>">Make A Reservation</button>
 			</form>

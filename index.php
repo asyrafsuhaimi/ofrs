@@ -1,11 +1,3 @@
-<?php
-session_start();
-
-if(!isset($_SESSION['login']))
-{
-	echo "<script language=javascript>alert('Please Log In First Before Using The System.');window.location='/ofrs/login.php';</script>";
-}
- ?>
 <html>
 <head>
 
@@ -24,7 +16,6 @@ if(!isset($_SESSION['login']))
 <div id="navigation">
 <ul>
 <li><a href="index.php">Home</a></li>
-<li><a href="#">About Us</a></li>
 <li><a href="../ofrs/facility/menu.php">Facilities</a></li>
 <li><a href="contact.html">Contact us</a></li>
 <li><a href="login.php">Login</a></li>

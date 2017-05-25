@@ -28,30 +28,29 @@ require_once('listbooking.php');
 
 <div id="navigation">
 	<ul>
-	<li><a href="../customer/index.php">Home</a></li>
+	<li><a href="/ofrs/admin/index.php">Home</a></li>
 	<li class="dropdown">
 		<a href="javascript:void(0)" class="dropbtn">Facilities</a>
 		<div class="dropdown-content">
-			<a href="../admin/facility/menu.php">Edit Facilities</a>
-			<a href="../admin/reservation/status.php">Customer Reservation</a>
+			<a href="/ofrs/admin/reservation/customerbooking.php">Customer Reservation</a>
 		</div>
 	</li>
 	<li class="dropdown">
 		<a href="javascript:void(0)" class="dropbtn">Accounts</a>
 		<div class="dropdown-content">
-			<a href="../admin/facility/menu.php">Customer Accounts</a>
-			<a href="../admin/reservation/status.php">Add Admin Accounts</a>
-			<a href="../admin/reservation/status.php">Edit Admin Accounts</a>
+			<a href="/ofrs/admin/account/customeraccount.php">Customer Accounts</a>
+			<a href="/ofrs/admin/account/registeradmin.php">Add Admin Accounts</a>
+			<a href="/ofrs/admin/account/adminaccount.php">Admin Accounts</a>
 		</div>
 	</li>
 	<li style="float:right" class="dropdown">
 		<a href="javascript:void(0)" class="dropbtn">Logged as.."<?php echo $_SESSION['login']?>"</a>
 		<div class="dropdown-content">
-			<a href="../accountdetail.php">Account Details </a>
+			<a href="/ofrs/admin/accountdetail.php">Account Details </a>
 			<a href="../logout.php">Logout </a>
 		</div>
 	</li>
-	<li><a href="#">Report</a></li>
+	<li><a href="../report.php">Report</a></li>
 	</ul>
 </div>
 <div id="mr">
@@ -63,7 +62,7 @@ require_once('listbooking.php');
 </div>
 <div id="content-container">
 <div id="main">
-<h3>Customer Booking</h3>
+<h3 class="backdrop">Customer Reservation</h3>
 <table class="center">
 
   <?php

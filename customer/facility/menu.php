@@ -25,7 +25,6 @@ if(!isset($_SESSION['login']))
 <div id="navigation">
 	<ul>
 	<li><a href="../index.php">Home</a></li>
-	<li><a href="#">About Us</a></li>
 	<li class="dropdown">
 		<a href="javascript:void(0)" class="dropbtn">Facilities</a>
 		<div class="dropdown-content">
@@ -49,8 +48,8 @@ if(!isset($_SESSION['login']))
             </td>
 	</tr>
 </div>
-
 <table class = "center">
+	<tr><td colspan="2"><h2 style="text-align:center">Facility</h2></td></tr>
   <tr>
     <td>
       <div class="overlay-container">
